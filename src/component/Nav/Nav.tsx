@@ -258,7 +258,7 @@
 
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "./okuse_Logo.png";
+import logo from "./nav_img/okuse_Logo.png";
 import { Navlinks } from "./navlinks/navlinks";
 import { auth, db } from "../../firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -285,7 +285,8 @@ export function Nav() {
 
           if (snapshot.exists()) {
             const userData = snapshot.data();
-            setOkuseCoin(parseInt(userData.Okuse, 10)); // Assuming Okuse is a string in Firestore
+            // setOkuseCoin(parseInt(userData.Okuse, 10)); // Assuming Okuse is a string in Firestore
+            setOkuseCoin(userData.Okuse);
           } else {
             console.error("No data available for this user.");
           }

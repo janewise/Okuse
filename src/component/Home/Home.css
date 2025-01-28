@@ -38,3 +38,14 @@
   height: 40%;
   width: 100%
 }
+
+
+/* game card image */
+.game_card{
+  text-align: center;
+}
+
+.game_card_img{
+  width: 100%;
+  height: auto;
+}
