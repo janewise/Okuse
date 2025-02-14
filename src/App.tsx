@@ -91,6 +91,7 @@ import Userprofile from "./component/logInandRegister/user/userprofile";
 import { LogIn } from "./component/logInandRegister/Login";
 import { SignUp } from "./component/logInandRegister/Signup";
 import { Resetpass } from "./component/logInandRegister/resetpassword";
+import  Transfer  from "./component/More/Transfer/Transfer";
 // loading
 import { LoadingScreen } from "./component/Game/Loading_screen/loadingscreen";
 import "./App.css";
@@ -101,6 +102,10 @@ import Quizhell from "./component/Game/quiz_game/Hell_quiz/quizHell";
 import N_matchCard from "./component/Game/match_card_game/Normal_matchCard/Normal_matchCard";
 import Hard_MatchCard from "./component/Game/match_card_game/Hard_matchCard/Hard_matchCard"
 import Hell_MatchCard from "./component/Game/match_card_game/Hell_matchCard/Hell_matchCard"
+import MatchCandy from "./component/Game/MatchCandy/MatchCandy";
+import MatchCandylvl from "./component/Game/MatchCandy/matchcandylevel/matchcandylevel";
+import Transf_History from "./component/More/Transfer/tranf_history/tranf_history";
+
 // Lazy load Quizgame
 const Quizgame = lazy(() => import("./component/Game/quiz_game/quiz_game"));
 // CSS
@@ -108,13 +113,16 @@ const Quizgame = lazy(() => import("./component/Game/quiz_game/quiz_game"));
 
 function App() {
   const location = useLocation();
-  const isAuthPage = ["/signin", "/signup", "/resetpass",
+  const isAuthPage = ["/signin", "/signup", "/resetpass","/Transfer_Main/transfer","/transfer_history",
     "/quiz_game","/quiz_game_level_normal","/quiz_game_level_hard","/quiz_game_level_hell",
     //for match the card
-    "/match_card","/match_card_level_normal","/match_card_level_hard","/match_card_level_hell",].includes(location.pathname);
-    const isAuthPagetwo = ["/signin", "/signup", "/resetpass", "/more",
+    "/match_card","/match_card_level_normal","/match_card_level_hard","/match_card_level_hell",
+  "/matchcandy","/matchcandylvl",].includes(location.pathname);
+    const isAuthPagetwo = ["/signin", "/signup", "/resetpass","/profile",
+      "/more","/Transfer_Main/transfer","/transfer_history",
       "/quiz_game","/quiz_game_level_normal","/quiz_game_level_hard","/quiz_game_level_hell",
-       "/match_card","/match_card_level_normal","/match_card_level_hard","/match_card_level_hell"].includes(location.pathname);
+       "/match_card","/match_card_level_normal","/match_card_level_hard","/match_card_level_hell",
+      "/matchcandy","/matchcandylvl",].includes(location.pathname);
 
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -138,6 +146,8 @@ function App() {
         <Route path="/topup" element={<TopUp />} />
         <Route path="/wishlist" element={<WhishList />} />
         <Route path="/more" element={<More />} />
+        <Route path="/Transfer_Main/*" element={<Transfer/>}/>
+        <Route path="/transfer_history" element={<Transf_History/>}/>
         {/* games */}
         <Route path="/quiz_game/*" element={<Suspense fallback={<LoadingScreen />}><Quizgame /></Suspense> }/>
         <Route path="/quiz_game_level_normal" element={<Suspense fallback={<LoadingScreen />}><Quiznormal /></Suspense> }/>
@@ -147,6 +157,8 @@ function App() {
         <Route path="/match_card_level_normal" element={<Suspense fallback={<LoadingScreen />}><N_matchCard /></Suspense> }/>
         <Route path="/match_card_level_hard" element={<Suspense fallback={<LoadingScreen />}><Hard_MatchCard/></Suspense> }/>
         <Route path="/match_card_level_hell" element={<Suspense fallback={<LoadingScreen />}><Hell_MatchCard/></Suspense> }/> 
+        <Route path="/matchcandy" element={<Suspense fallback={<LoadingScreen />}><MatchCandy/></Suspense> }/>
+        <Route path="/matchcandylvl" element={<Suspense fallback={<LoadingScreen />}><MatchCandylvl/></Suspense> }/>
       </Routes>
     </div>
   );

@@ -24,7 +24,7 @@ export const gameData = [
       id: 3,
       name: "Character C",
       image: "/home_img/Game1.png" ,
-    
+      navigate:"/match_card"
     },
     {
       id: 4,
@@ -77,8 +77,8 @@ export const gameData = [
     },
     {
       id: 12,
-      name: "Character D",
+      name: "Candy Crush",
       image: "/home_img/Game1.png" ,
-  navigate:"/quiz_game"
+  navigate:"/matchcandy"
     },
   ];

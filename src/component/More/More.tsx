@@ -48,7 +48,7 @@ export function More(){
                   </li>
                   <li className="homenav-item">
                     <NavLink
-                      to="/transfer"
+                      to="/Transfer_Main"
                       className={({ isActive }) =>
                         isActive ? "linkactive homenav-link" : "homenav-link"
                       }

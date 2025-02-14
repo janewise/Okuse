@@ -10,6 +10,7 @@
     --light-dark-toggle-icon:#fa6c00;
     --navbar-togglerbg:none;
     --homesearchbar-icon_text:#fff;
+    --transfer-link-bg:#e3e3e3dd;
   }
   
   /* Variables for dark theme */
@@ -24,6 +25,7 @@
     --navbar-togglerbg:#fff;
   --light-dark-toggle-icon:#fff;
   --homesearchbar-icon_text:#000000;
+  --transfer-link-bg:#212121dd;
   }
 
   

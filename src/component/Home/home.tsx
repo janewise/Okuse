@@ -13,8 +13,11 @@ export function Home(){
     setSearchValue(event.target.value);
   };
 
+  // const filteredData = gameData.filter((item) =>
+  //   item.name.toLowerCase().includes(searchValue.toLowerCase())
+  // );
   const filteredData = gameData.filter((item) =>
-    item.name.toLowerCase().includes(searchValue.toLowerCase())
+    item.name.toLowerCase().includes(searchValue.trim().toLowerCase())
   );
 
     return(
@@ -36,13 +39,24 @@ export function Home(){
         <div className="home_game_box row">
 <h2>Level Up Your Fun</h2>
 
-        {filteredData.map((game) => (
+        {/* {filteredData.map((game) => (
           <div key={game.id} className="col-3 col-md-2 col-lg-2 mb-4 game_card">
              <NavLink to={game.navigate || "/"}>
               <img src={game.image} alt={game.name} className="game_card_img" /> 
               </NavLink>
           </div>
-        ))}
+        ))} */}
+        {filteredData.length > 0 ? (
+  filteredData.map((game) => (
+    <div key={game.id} className="col-4 col-md-2 col-lg-2 mb-4 game_card">
+      <NavLink to={game.navigate || "/"}>
+        <img src={game.image} alt={game.name} className="game_card_img" /> 
+      </NavLink>
+    </div>
+  ))
+) : (
+  <p className="no-results">No games found</p>
+)}
         </div>
       </div>
     );

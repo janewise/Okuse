@@ -78,9 +78,9 @@
 //       .map((card, index) => ({ ...card, uniqueId: index }));
 //     setCards(shuffledCards);
 
-//     const loadTimer = setTimeout(() => setIsLoading(false), 2000);
-//     return () => clearTimeout(loadTimer);
-//   }, []);
+  //   const loadTimer = setTimeout(() => setIsLoading(false), 2000);
+  //   return () => clearTimeout(loadTimer);
+  // }, []);
 
 //   useEffect(() => {
 //     const fetchUserData = async (userId: string) => {

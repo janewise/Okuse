@@ -70,10 +70,12 @@ export function Navlinks() {
       <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
         <li>
           {user && (
+            <a href="/profile"  className="nav-link-username">
             <button className="profile-icon" aria-label="Profile">
                <i className="bi bi-person-circle"></i>
               <span className="username_show"> {usernameId}</span>
             </button>
+            </a>
           )}
         </li>
         <li className="nav-item">
